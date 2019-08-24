@@ -14,7 +14,20 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
+
 steps:
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 
+      echo $Build.SourceBranch
+      prefix="release/";
+      version=$Build.SourceBranch#$prefix;
+      echo $version; 
+      set -x
+      envman add --key BranchVersionNumber --value $version
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -31,3 +44,17 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'BranchVersionNumber'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '260a0b23-6644-4c24-be14-b8e9ed6fef92'
