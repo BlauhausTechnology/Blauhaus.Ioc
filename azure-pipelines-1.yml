@@ -21,12 +21,12 @@ steps:
   inputs:
     targetType: 'inline'
     script: 
-      echo $Build.SourceBranch
+      echo $(Build.SourceBranch)
       prefix="release/";
-      version=$Build.SourceBranch#$prefix;
-      echo $version; 
+      version=$(Build.SourceBranch)#$prefix;
+      echo Parsed version $(version); 
       set -x
-      envman add --key BranchVersionNumber --value $version
+      envman add --key BranchVersionNumber --value $(version)
 
 - task: NuGetToolInstaller@1
 
