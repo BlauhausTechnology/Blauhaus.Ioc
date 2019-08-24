@@ -29,10 +29,11 @@ steps:
     command: 'pack'
     packagesToPack: 'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
     versioningScheme: 'byBuildNumber'
-- task: DotNetCoreCLI@2
+    
+- task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: '260a0b23-6644-4c24-be14-b8e9ed6fef92'
 
