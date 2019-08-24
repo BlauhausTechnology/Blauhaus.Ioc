@@ -16,6 +16,11 @@ variables:
 steps:
 - task: DotNetCoreCLI@2
   inputs:
+    command: 'build'
+    projects: 'Blauhaus.Ioc/Blauhaus.Ioc.sln'
+
+- task: DotNetCoreCLI@2
+  inputs:
     command: 'test'
     projects: 'Blauhaus.Ioc/Blauhaus.Ioc.sln'
 
