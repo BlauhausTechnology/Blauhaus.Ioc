@@ -3,6 +3,6 @@
     public enum IocLifetime
     {
         Transient,
-        Singleton
+        Singleton 
     }
 }
