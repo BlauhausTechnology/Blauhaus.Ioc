@@ -13,6 +13,8 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
+
+
 steps:
 - task: DotNetCoreCLI@2
   inputs:
@@ -26,14 +28,17 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    command: 'pack'
+    command: pack
     packagesToPack: 'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
-    versioningScheme: 'byBuildNumber'
-    
-- task: NuGetCommand@2
+    versioningScheme: byBuildNumber
+    majorVersion: '0'
+    minorVersion: '0'
+    patchVersion: '1'
+
+- task: DotNetCoreCLI@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: '260a0b23-6644-4c24-be14-b8e9ed6fef92'
 
