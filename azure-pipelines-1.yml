@@ -15,16 +15,6 @@ variables:
   buildConfiguration: 'Release'
 
 
-steps:
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 
-      echo Build.SourceBranch $(Build.SourceBranch)
-      set -x
-      envman add --key BranchVersionNumber --value $(Build.SourceBranch)#refs/heads/release/
-
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -47,7 +37,7 @@ steps:
     command: 'pack'
     packagesToPack: 'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
     versioningScheme: 'byEnvVar'
-    versionEnvVar: 'BranchVersionNumber'
+    versionEnvVar: 'Build.SourceBranchName'
 
 - task: DotNetCoreCLI@2
   inputs:
