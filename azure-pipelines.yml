@@ -5,7 +5,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+- release/*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -13,7 +13,18 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      prefix="release/";
+      version=$Build.SourceBranch#$prefix;
+      echo $version; 
+      
+      set -x
+      envman add --key BranchVersionNumber --value $version
 
 steps:
 - task: DotNetCoreCLI@2
@@ -28,12 +39,10 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    command: pack
+    command: 'pack'
     packagesToPack: 'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
-    versioningScheme: byBuildNumber
-    majorVersion: '0'
-    minorVersion: '0'
-    patchVersion: '1'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'BranchVersionNumber'
 
 - task: DotNetCoreCLI@2
   inputs:
