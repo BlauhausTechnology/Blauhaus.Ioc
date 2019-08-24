@@ -17,6 +17,4 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/Blauhaus.Ioc/Blauhaus.Ioc.Tests/Blauhaus.Ioc.IntegrationTests.csproj'
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+    projects: 'Blauhaus.Ioc/Blauhaus.Ioc.sln'
