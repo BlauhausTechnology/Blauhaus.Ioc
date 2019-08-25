@@ -43,7 +43,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: 'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
+    packagesToPack: '$(Build.ArtifactStagingDirectory)/**/*.nuspec'
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'Build.SourceBranchName'
 
