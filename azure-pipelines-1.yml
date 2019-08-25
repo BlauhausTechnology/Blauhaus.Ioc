@@ -34,12 +34,13 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: 'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
+    packagesToPack: '**/*.nuspec'
+    nobuild: true
     versioningScheme: 'byEnvVar'
-    versionEnvVar: 'Build.SourceBranchName'
+    versionEnvVar: '$(Build.SourceBranchName)'
 
 - task: DotNetCoreCLI@2
   inputs:
