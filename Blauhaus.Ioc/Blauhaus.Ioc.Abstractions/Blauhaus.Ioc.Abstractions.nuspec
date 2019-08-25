@@ -5,7 +5,7 @@
     <version>0.0.0</version>
     <authors>Blauhaus</authors>
     <owners>Blauhaus</owners>
-    <projectUrl>http://www.blauhaustechnology.com</projectUrl>
+    <projectUrl>https://github.com/BlauhausTechnology/Blauhaus.Ioc</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Ioc wrapper abstractions</description>
     <releaseNotes></releaseNotes>
