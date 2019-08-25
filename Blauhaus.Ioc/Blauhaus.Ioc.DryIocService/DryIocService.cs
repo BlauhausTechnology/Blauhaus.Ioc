@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using Blauhaus.Ioc.Abstractions;
+﻿using Blauhaus.Ioc.Abstractions;
 using DryIoc;
 using IContainer = DryIoc.IContainer;
 

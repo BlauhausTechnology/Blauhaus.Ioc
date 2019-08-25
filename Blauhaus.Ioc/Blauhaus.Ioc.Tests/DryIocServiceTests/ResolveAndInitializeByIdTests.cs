@@ -1,29 +1,17 @@
-﻿using Blauhaus.Ioc.IntegrationTests.TestObjects;
+﻿using Blauhaus.Ioc.Abstractions;
+using Blauhaus.Ioc.IntegrationTests.Base;
+using DryIoc;
 using NUnit.Framework;
 
 namespace Blauhaus.Ioc.IntegrationTests.DryIocServiceTests
 {
     [TestFixture]
-    public class ResolveAndInitializeByIdTests
+    public class ResolveAndInitializeByIdTests: BaseResolveAndInitializeByIdTests
     {
-        [SetUp]
-        public void Setup()
+        protected override IIocService ConstructSut()
         {
+            return new DryIocService.DryIocService(new Container());
         }
 
-        [Test]
-        public void SHOULD_Initialize_with_string_parameter()
-        {
-            //Arrange
-            var container = new DryIoc.Container();
-            var sut = new DryIocService.DryIocService(container);
-            sut.RegisterImplementation<IObjectA, ObjectA>();
-
-            //Act
-            var result = sut.ResolveAndInitializeById<IObjectA>("stringParam");
-
-            //Assert
-            Assert.That(result.StringParameter, Is.EqualTo("stringParam"));
-        }
     }
 }
