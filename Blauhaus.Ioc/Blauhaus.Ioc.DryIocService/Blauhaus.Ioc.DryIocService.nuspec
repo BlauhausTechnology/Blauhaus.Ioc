@@ -5,19 +5,18 @@
     <version>0.0.0</version>
     <authors>Blauhaus</authors>
     <owners>Blauhaus</owners>
-    <licenseUrl>http://www.blauhaustechnology.com</licenseUrl>
-    <projectUrl>http://www.blauhaustechnology.com</projectUrl>
+    <projectUrl>https://github.com/BlauhausTechnology/Blauhaus.Ioc</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Lightweight wrapper around DryIoc container</description>
+    <description>Simple wrapper around DryIoc</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags></tags>
     <dependencies>
-      <group>
-      </group>
+      <dependency id="Blauhaus.Ioc.Abstractions" version="0.0.7" />
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\netstandard2.0\*" target="lib\netstandard2.0"/>
+    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.DryIocService.dll" target="lib\netstandard2.0"/>
+    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.DryIocService.pdb" target="lib\netstandard2.0"/>
   </files>
 </package>
