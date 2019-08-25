@@ -42,5 +42,17 @@ namespace Blauhaus.Ioc.IntegrationTests.Base
             Assert.That(result1.Id, Is.EqualTo(result2.Id));
             Assert.That(result1, Is.EqualTo(result2));
         }
+
+        
+        [Test]
+        public void WHEN_fails_SHOULD_throw_exception()
+        {
+            //Arrange
+            Sut.Dispose();
+
+            //Act and Assert
+            var thrownException = Assert.Throws<IocContainerException>(() => Sut.RegisterType<ObjectA>(IocLifetime.Singleton));
+            Assert.That(thrownException.Message, Is.EqualTo("Failed to register ObjectA with the Ioc container"));
+        }
     }
 }

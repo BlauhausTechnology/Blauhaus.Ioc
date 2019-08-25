@@ -44,5 +44,16 @@ namespace Blauhaus.Ioc.IntegrationTests.Base
             Assert.That(result1, Is.EqualTo(result2));
         }
 
+        [Test]
+        public void WHEN_fails_SHOULD_throw_exception()
+        {
+            //Arrange
+            Sut.RegisterType<ObjectA>();
+            Sut.Dispose();
+
+            //Act and Assert
+            var thrownException = Assert.Throws<IocContainerException>(() => Sut.RegisterImplementation<IObjectA, ObjectA>(IocLifetime.Singleton));
+            Assert.That(thrownException.Message, Is.EqualTo("Failed to register ObjectA as implementation of IObjectA with the Ioc container"));
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Blauhaus.Ioc.IntegrationTests.TestObjects;
+﻿using Blauhaus.Ioc.Abstractions;
+using Blauhaus.Ioc.IntegrationTests.TestObjects;
 using DryIoc;
 using NUnit.Framework;
 
@@ -14,7 +15,8 @@ namespace Blauhaus.Ioc.IntegrationTests.Base
 
             //Act and Assert
             Sut.Dispose();
-            Assert.Throws<ContainerException>(() => Sut.Resolve<ObjectA>());
+            var thrownException = Assert.Throws<IocContainerException>(() => Sut.Resolve<ObjectA>());
+            Assert.That(thrownException.Message, Is.EqualTo("Failed to resolve ObjectA from the Ioc container"));
         }
 
     }
