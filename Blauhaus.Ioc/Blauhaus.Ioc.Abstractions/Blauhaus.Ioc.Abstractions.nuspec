@@ -17,6 +17,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.Abstractions*" target="lib\netstandard2.0"/>
+    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.Abstractions.dll" target="lib\netstandard2.0"/>
+    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.Abstractions.pdb" target="lib\netstandard2.0"/>
   </files>
 </package>

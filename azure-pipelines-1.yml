@@ -57,6 +57,6 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: 'Blauhaus.Ioc.DryIocService.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*Blauhaus.Ioc.DryIocService.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Nuget.org'

@@ -16,6 +16,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.DryIocService*" target="lib\netstandard2.0"/>
+    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.DryIocService.dll" target="lib\netstandard2.0"/>
+    <file src="bin\Release\netstandard2.0\Blauhaus.Ioc.DryIocService.pdb" target="lib\netstandard2.0"/>
   </files>
 </package>
