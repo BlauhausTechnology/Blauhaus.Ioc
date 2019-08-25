@@ -58,5 +58,5 @@ steps:
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: '260a0b23-6644-4c24-be14-b8e9ed6fef92'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Nuget.org'
