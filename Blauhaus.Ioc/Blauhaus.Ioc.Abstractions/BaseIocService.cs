@@ -4,7 +4,7 @@ namespace Blauhaus.Ioc.Abstractions
 {
     public abstract class BaseIocService : IIocService
     {
-         public void RegisterType<T>(IocLifetime lifeTime = IocLifetime.Transient)
+         public void RegisterType<T>(IocLifetime lifeTime = IocLifetime.Transient)  where T : class
         {
             try
             {
@@ -17,21 +17,21 @@ namespace Blauhaus.Ioc.Abstractions
         }
 
 
-        public void RegisterImplementation<T, TImplementation>(IocLifetime lifeTime = IocLifetime.Transient) where TImplementation : T
+        public void RegisterImplementation<TInterface, TImplementation>(IocLifetime lifeTime = IocLifetime.Transient) where TImplementation : class, TInterface where TInterface : class
         {
  
             try
             {
-                RegisterImplementationWithContainer<T, TImplementation>(lifeTime);
+                RegisterImplementationWithContainer<TInterface, TImplementation>(lifeTime);
             }
             catch (Exception e)
             {
-                throw new IocContainerException($"Failed to register {typeof(TImplementation).Name} as implementation of {typeof(T).Name} with the Ioc container", e);
+                throw new IocContainerException($"Failed to register {typeof(TImplementation).Name} as implementation of {typeof(TInterface).Name} with the Ioc container", e);
             }
         }
         
        
-        public T Resolve<T>()
+        public T Resolve<T>() where T : class 
         {
             try
             {
@@ -44,7 +44,7 @@ namespace Blauhaus.Ioc.Abstractions
         }
         
 
-        public T ResolveAndInitialize<T, TParam>(TParam param) where T : IInitializable<TParam>
+        public T ResolveAndInitialize<T, TParam>(TParam param) where T : class, IInitializable<TParam>
         {
             T instance;
             try
@@ -68,7 +68,7 @@ namespace Blauhaus.Ioc.Abstractions
 
         }
 
-        public T ResolveAndInitializeById<T>(string param) where T : IInitializable<string>
+        public T ResolveAndInitializeById<T>(string param) where T : class, IInitializable<string>
         {
             T instance;
             try
@@ -91,7 +91,7 @@ namespace Blauhaus.Ioc.Abstractions
             }
         }
 
-        public bool TryResolve<T>(out T instance)
+        public bool TryResolve<T>(out T instance) where T : class
         {
             try
             {
@@ -106,7 +106,7 @@ namespace Blauhaus.Ioc.Abstractions
 
         }
 
-        public bool TryResolveAndInitialize<T, TParam>(TParam param, out T instance) where T : IInitializable<TParam>
+        public bool TryResolveAndInitialize<T, TParam>(TParam param, out T instance) where T : class, IInitializable<TParam>
         {
             try
             {
@@ -122,7 +122,7 @@ namespace Blauhaus.Ioc.Abstractions
 
         }
 
-        public bool TryResolveAndInitializeById<T>(string param, out T instance) where T : IInitializable<string>
+        public bool TryResolveAndInitializeById<T>(string param, out T instance) where T : class, IInitializable<string>
         {
             try
             {
@@ -145,9 +145,9 @@ namespace Blauhaus.Ioc.Abstractions
         }
 
         
-        protected abstract void RegisterTypeWithContainer<T>(IocLifetime lifeTime);
-        protected abstract void RegisterImplementationWithContainer<T, TImplementation>(IocLifetime lifeTime) where TImplementation : T;
-        protected abstract T ResolveFromContainer<T>();
+        protected abstract void RegisterTypeWithContainer<T>(IocLifetime lifeTime)  where T : class;
+        protected abstract void RegisterImplementationWithContainer<TInterface, TImplementation>(IocLifetime lifeTime) where TImplementation : class, TInterface where TInterface : class;
+        protected abstract T ResolveFromContainer<T>() where T : class;
         protected abstract void Dispose(bool disposing);
     }
 }
