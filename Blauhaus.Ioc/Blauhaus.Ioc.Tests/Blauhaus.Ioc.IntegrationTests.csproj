@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Blauhaus.Ioc.Abstractions\Blauhaus.Ioc.Abstractions.csproj" />
     <ProjectReference Include="..\Blauhaus.Ioc.DryIocService\Blauhaus.Ioc.DryIocService.csproj" />
+    <ProjectReference Include="..\Blauhaus.Ioc.MvvmCrossIocService\Blauhaus.Ioc.MvvmCrossIocService.csproj" />
   </ItemGroup>
 
 </Project>

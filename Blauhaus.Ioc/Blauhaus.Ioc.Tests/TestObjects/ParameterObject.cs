@@ -10,5 +10,10 @@ namespace Blauhaus.Ioc.IntegrationTests.TestObjects
         }
 
         public string Id { get; set; }
+
+        public override string ToString()
+        {
+            return "Paramater Object " + Id;
+        }
     }
 }
