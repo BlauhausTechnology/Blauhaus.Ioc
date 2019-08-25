@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Blauhaus.Ioc.Abstractions</id>
+    <id>Blauhaus.Ioc.DryIocService</id>
     <version>0.0.0</version>
     <authors>Blauhaus</authors>
     <owners>Blauhaus</owners>
