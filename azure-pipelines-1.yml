@@ -38,8 +38,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: 
-        'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec'
-        'Blauhaus.Ioc/Blauhaus.Ioc.DryIoc/Blauhaus.Ioc.DryIoc.nuspec'
+        'Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.nuspec','Blauhaus.Ioc/Blauhaus.Ioc.DryIoc/Blauhaus.Ioc.DryIoc.nuspec'
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'Build.SourceBranchName'
 
