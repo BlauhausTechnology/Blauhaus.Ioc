@@ -54,9 +54,16 @@ steps:
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'Build.SourceBranchName'
 
+# - task: NuGetCommand@2
+#   inputs:
+#     command: 'push'
+#     packagesToPush: '$(Build.ArtifactStagingDirectory)/Blauhaus.Ioc.DryIocService.nupkg'
+#     nuGetFeedType: 'external'
+#     publishFeedCredentials: 'Nuget.org'
+
 - task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/Blauhaus.Ioc.DryIocService.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Nuget.org'
