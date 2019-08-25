@@ -13,7 +13,7 @@
     <tags></tags>
     <dependencies>
       <dependency id="Blauhaus.Ioc.Abstractions" version="0.1.7" />
-      <dependency id="MvvmCross.dll" version="5.0.0" />
+      <dependency id="MvvmCross.dll" version="5.6.3" />
     </dependencies>
   </metadata>
   <files>
