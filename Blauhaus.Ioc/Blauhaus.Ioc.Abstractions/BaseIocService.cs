@@ -91,6 +91,52 @@ namespace Blauhaus.Ioc.Abstractions
             }
         }
 
+        public bool TryResolve<T>(out T instance)
+        {
+            try
+            {
+                instance = ResolveFromContainer<T>();
+                return true;
+            }
+            catch (Exception)
+            {
+                instance = default(T);
+                return false;
+            }
+
+        }
+
+        public bool TryResolveAndInitialize<T, TParam>(TParam param, out T instance) where T : IInitializable<TParam>
+        {
+            try
+            {
+                instance = ResolveFromContainer<T>();
+                instance.Initialize(param);
+                return true;
+            }
+            catch (Exception)
+            {
+                instance = default;
+                return false;
+            }
+
+        }
+
+        public bool TryResolveAndInitializeById<T>(string param, out T instance) where T : IInitializable<string>
+        {
+            try
+            {
+                instance = ResolveFromContainer<T>();
+                instance.Initialize(param);
+                return true;
+            }
+            catch (Exception)
+            {
+                instance = default;
+                return false;
+            }
+        }
+
 
         public void Dispose()
         {
