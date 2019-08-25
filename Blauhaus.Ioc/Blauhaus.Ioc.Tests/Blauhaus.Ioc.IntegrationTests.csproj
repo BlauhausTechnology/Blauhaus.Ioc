@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
@@ -14,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blauhaus.Ioc.Abstractions\Blauhaus.Ioc.Abstractions.csproj" />
+    <ProjectReference Include="..\Blauhaus.Ioc.DotNetCoreIocService\Blauhaus.Ioc.DotNetCoreIocService.csproj" />
     <ProjectReference Include="..\Blauhaus.Ioc.DryIocService\Blauhaus.Ioc.DryIocService.csproj" />
     <ProjectReference Include="..\Blauhaus.Ioc.MvvmCrossIocService\Blauhaus.Ioc.MvvmCrossIocService.csproj" />
   </ItemGroup>
