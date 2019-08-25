@@ -7,13 +7,12 @@
     <owners>Blauhaus</owners>
     <projectUrl>http://www.blauhaustechnology.com</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Ioc wrapper abstractions</description>
+    <description>Simple wrapper around DryIoc</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags></tags>
     <dependencies>
-      <group>
-      </group>
+      <dependency id="Blauhaus.Ioc.Abstractions" version="0.0.7" />
     </dependencies>
   </metadata>
   <files>
