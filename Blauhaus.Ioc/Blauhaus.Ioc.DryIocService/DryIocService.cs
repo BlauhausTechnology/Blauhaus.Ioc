@@ -12,7 +12,7 @@ namespace Blauhaus.Ioc.DryIocService
 
         public DryIocService(IContainer dryIocContainer)
         {
-            _dryIocContainer = dryIocContainer;
+            _dryIocContainer = dryIocContainer; 
         }
         
         public void RegisterType<T>(IocLifetime lifeTime = IocLifetime.Transient)
