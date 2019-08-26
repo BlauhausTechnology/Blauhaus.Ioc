@@ -12,6 +12,7 @@ namespace Blauhaus.Ioc.MvvmCrossIocService
         public MvvmCrossIocService(IMvxIoCProvider iocContainer)
         {
             _iocContainer = iocContainer;
+            _iocContainer.RegisterSingleton<IIocService>(this);
         }
 
 
