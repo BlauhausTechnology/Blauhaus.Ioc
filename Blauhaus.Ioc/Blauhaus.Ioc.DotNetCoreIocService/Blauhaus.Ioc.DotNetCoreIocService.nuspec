@@ -12,7 +12,7 @@
     <copyright>Copyright 2019</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Blauhaus.Ioc.Abstractions" version="0.1.7" />
+      <dependency id="Blauhaus.Ioc.Abstractions" version="0.2.3" />
       <dependency id="Microsoft.Extensions.DependencyInjection" version="2.2.0" />
     </dependencies>
   </metadata>

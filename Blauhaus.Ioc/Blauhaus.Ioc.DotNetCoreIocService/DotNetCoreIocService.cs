@@ -12,6 +12,7 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
         public DotNetCoreIocService(IServiceCollection serviceCollection)
         {
             _serviceCollection = serviceCollection;
+            _serviceCollection.AddSingleton<IIocService>(this);
             _serviceProvider = serviceCollection.BuildServiceProvider();
         }
 
