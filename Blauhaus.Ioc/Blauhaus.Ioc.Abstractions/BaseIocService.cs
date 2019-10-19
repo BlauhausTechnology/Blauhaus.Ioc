@@ -116,7 +116,7 @@ namespace Blauhaus.Ioc.Abstractions
             }
             catch (Exception)
             {
-                instance = default;
+                instance = default(T);
                 return false;
             }
 
@@ -132,7 +132,7 @@ namespace Blauhaus.Ioc.Abstractions
             }
             catch (Exception)
             {
-                instance = default;
+                instance = default(T);
                 return false;
             }
         }
