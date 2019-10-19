@@ -29,8 +29,20 @@ namespace Blauhaus.Ioc.Abstractions
                 throw new IocContainerException($"Failed to register {typeof(TImplementation).Name} as implementation of {typeof(TInterface).Name} with the Ioc container", e);
             }
         }
-        
-       
+
+        public void RegisterInstance<T>(T instance) where T : class
+        {
+            try
+            {
+                RegisterInstanceWithContainer<T>(instance);
+            }
+            catch (Exception e)
+            {
+                throw new IocContainerException($"Failed to register instance of {typeof(T).Name} with the Ioc container", e);
+            }
+        }
+
+
         public T Resolve<T>() where T : class 
         {
             try
@@ -147,6 +159,8 @@ namespace Blauhaus.Ioc.Abstractions
         
         protected abstract void RegisterTypeWithContainer<T>(IocLifetime lifeTime)  where T : class;
         protected abstract void RegisterImplementationWithContainer<TInterface, TImplementation>(IocLifetime lifeTime) where TImplementation : class, TInterface where TInterface : class;
+        protected abstract void RegisterInstanceWithContainer<T>(T instance) where T : class;
+        
         protected abstract T ResolveFromContainer<T>() where T : class;
         protected abstract void Dispose(bool disposing);
     }

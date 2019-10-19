@@ -40,6 +40,11 @@ namespace Blauhaus.Ioc.MvvmCrossIocService
             }
         }
 
+        protected override void RegisterInstanceWithContainer<T>(T instance)
+        {
+            _iocContainer.RegisterSingleton(instance);
+        }
+
         protected override T ResolveFromContainer<T>() 
         {
             return _iocContainer.Resolve<T>();
