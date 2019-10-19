@@ -19,6 +19,6 @@ jobs:
        with:
          dotnet-version: 2.2.108
      - name: Build NuGet Package
-       run: dotnet pack -p:PackageVersion=${VERSION_NAME} ./src/TheGame.sln --configuration Release_Blauhaus
+       run: dotnet pack -p:PackageVersion=${VERSION_NAME} ./Blauhaus.Ioc/Blauhaus.Ioc.sln --configuration Release_Blauhaus
      - name: Deploy NuGet Package
        run: dotnet nuget push ./**/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
