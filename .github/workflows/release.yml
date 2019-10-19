@@ -21,7 +21,7 @@ jobs:
      - name: Build NuGet Packages
        run: |
         dotnet pack -p:PackageVersion=${VERSION_NAME} ./Blauhaus.Ioc/Blauhaus.Ioc.sln --configuration Release --output ./
-        dotnet test
+        dotnet test ./Blauhaus.Ioc/Blauhaus.Ioc.sln
      - name: Deploy NuGet Packages
        run: |
         dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions.${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
