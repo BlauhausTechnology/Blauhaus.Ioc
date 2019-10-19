@@ -22,7 +22,7 @@ jobs:
        run: dotnet pack -p:PackageVersion=${VERSION_NAME} ./Blauhaus.Ioc/Blauhaus.Ioc.sln --configuration Release --output ./
      - name: Deploy NuGet Packages
        run: |
-        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
-        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.DotNetCoreIocService/Blauhaus.Ioc.DotNetCoreIocService/Blauhaus.Ioc.DotNetCoreIocService${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
-        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.DryIocService/Blauhaus.Ioc.DryIocService/Blauhaus.Ioc.DryIocService${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
-        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.MvvmCrossIocService/Blauhaus.Ioc.MvvmCrossIocService/Blauhaus.Ioc.MvvmCrossIocService${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.Abstractions/Blauhaus.Ioc.Abstractions${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.DotNetCoreIocService/Blauhaus.Ioc.DotNetCoreIocService${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.DryIocService/Blauhaus.Ioc.DryIocService${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./Blauhaus.Ioc/Blauhaus.Ioc.MvvmCrossIocService/Blauhaus.Ioc.MvvmCrossIocService${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
