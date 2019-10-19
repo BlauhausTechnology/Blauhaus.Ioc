@@ -26,6 +26,11 @@ namespace Blauhaus.Ioc.DryIocService
             _dryIocContainer.Register<T, TImplementation>(lifeTime == IocLifetime.Transient ? Reuse.Transient : Reuse.Singleton);
         }
 
+        protected override void RegisterInstanceWithContainer<T>(T instance)
+        {
+            _dryIocContainer.RegisterInstance(instance);
+        }
+
         protected override T ResolveFromContainer<T>()
         {
             return _dryIocContainer.Resolve<T>();

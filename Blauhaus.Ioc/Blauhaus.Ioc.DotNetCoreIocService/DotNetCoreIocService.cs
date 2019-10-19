@@ -44,6 +44,12 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
             }
         }
 
+        protected override void RegisterInstanceWithContainer<T>(T instance)
+        {
+            _serviceCollection.AddSingleton<T>(instance);
+            _serviceProvider = _serviceCollection.BuildServiceProvider();
+        }
+
         protected override T ResolveFromContainer<T>()
         {
             return _serviceProvider.GetService<T>();

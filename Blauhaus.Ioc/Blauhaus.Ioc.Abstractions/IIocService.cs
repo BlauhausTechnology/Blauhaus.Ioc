@@ -6,6 +6,7 @@ namespace Blauhaus.Ioc.Abstractions
     {
         void RegisterType<T>(IocLifetime lifeTime = IocLifetime.Transient) where T : class;
         void RegisterImplementation<TInterface, TImplementation>(IocLifetime lifeTime = IocLifetime.Transient) where TImplementation : class, TInterface where TInterface : class;
+        void RegisterInstance<T>(T instance) where T : class;
 
         T Resolve<T>() where T : class;
         T ResolveAndInitialize<T, TParam>(TParam param) where T : class, IInitializable<TParam>;
