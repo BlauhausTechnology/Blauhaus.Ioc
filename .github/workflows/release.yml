@@ -19,6 +19,10 @@ jobs:
        with:
          dotnet-version: 2.2.108
      - name: Build NuGet Packages
-       run: dotnet pack -p:PackageVersion=${VERSION_NAME} ./Blauhaus.Ioc/Blauhaus.Ioc.sln --configuration Release
+       run: dotnet pack -p:PackageVersion=${VERSION_NAME} ./Blauhaus.Ioc/Blauhaus.Ioc.sln --configuration Release --output ./
      - name: Deploy NuGet Packages
-       run: dotnet nuget push ./**/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+       run: |
+        dotnet nuget push ./Blauhaus.Ioc.Abstractions.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./Blauhaus.Ioc.DotNetCoreIocService.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./Blauhaus.Ioc.DryIocService.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./Blauhaus.Ioc.MvvmCrossIocService.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
