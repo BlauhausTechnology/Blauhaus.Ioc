@@ -10,8 +10,6 @@ namespace Blauhaus.Ioc.IntegrationTests.TestObjects
         }
 
         public string Id { get; }
-        public string StringParameter { get; private set; }
-        public ParameterObject ObjectParameter { get; private set; }
 
 
 
