@@ -54,6 +54,12 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
         {
             return _serviceProvider.GetService<T>();
         }
+        
+        protected override object ResolveTypeFromContainer(Type type)
+        {
+            return _serviceProvider.GetService(type);
+        }
+
 
         protected override void Dispose(bool disposing)
         {

@@ -36,6 +36,11 @@ namespace Blauhaus.Ioc.DryIocService
             return _dryIocContainer.Resolve<T>();
         }
 
+        protected override object ResolveTypeFromContainer(Type type)
+        {
+            return _dryIocContainer.Resolve(type);
+        }
+
         protected override void Dispose(bool disposing)
         {
             _dryIocContainer?.Dispose();

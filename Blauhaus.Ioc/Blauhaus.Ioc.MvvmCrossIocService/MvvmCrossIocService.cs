@@ -1,4 +1,5 @@
-﻿using Blauhaus.Ioc.Abstractions;
+﻿using System;
+using Blauhaus.Ioc.Abstractions;
 using MvvmCross;
 using MvvmCross.Base;
 using MvvmCross.IoC;
@@ -49,6 +50,11 @@ namespace Blauhaus.Ioc.MvvmCrossIocService
         {
             return _iocContainer.Resolve<T>();
         }
+        protected override object ResolveTypeFromContainer(Type type)
+        {
+            return _iocContainer.Resolve(type);
+        }
+
 
         protected override void Dispose(bool disposing)
         {

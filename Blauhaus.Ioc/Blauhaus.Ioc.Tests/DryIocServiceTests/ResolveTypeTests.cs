@@ -4,14 +4,15 @@ using DryIoc;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 
-namespace Blauhaus.Ioc.IntegrationTests.DotNetCoreIocServiceTests
+namespace Blauhaus.Ioc.IntegrationTests.DryIocServiceTests
 {
     [TestFixture]
-    public class ResolveAndInitializeByIdTests: BaseResolveAndInitializeByIdTests
+    public class ResolveTypeTests : BaseResolveTypeTests
     {
+        
         protected override IIocService ConstructSut()
         {
-            return new DotNetCoreIocService.DotNetCoreIocService(new ServiceCollection());
+            return new DryIocService.DryIocService(new Container());
         }
 
     }

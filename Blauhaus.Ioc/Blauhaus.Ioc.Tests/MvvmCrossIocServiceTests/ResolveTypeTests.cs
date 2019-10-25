@@ -7,8 +7,9 @@ using NUnit.Framework;
 namespace Blauhaus.Ioc.IntegrationTests.MvvmCrossIocServiceTests
 {
     [TestFixture]
-    public class ResolveAndInitializeByIdTests: BaseResolveAndInitializeByIdTests
+    public class ResolveTypeTests : BaseResolveTypeTests
     {
+        
         protected override IIocService ConstructSut()
         {
             return new MvvmCrossIocService.MvvmCrossIocService(MvxIoCProvider.Initialize());

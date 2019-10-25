@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace Blauhaus.Ioc.IntegrationTests.DotNetCoreIocServiceTests
 {
     [TestFixture]
-    public class TryResolveAndInitializeTests : BaseTryResolveAndInitializeTests
+    public class ResolveTypeTests : BaseResolveTypeTests
     {
         
         protected override IIocService ConstructSut()

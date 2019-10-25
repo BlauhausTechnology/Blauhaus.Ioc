@@ -54,52 +54,16 @@ namespace Blauhaus.Ioc.Abstractions
                 throw new IocContainerException($"Failed to resolve {typeof(T).Name} from the Ioc container", e);
             }
         }
-        
 
-        public T ResolveAndInitialize<T, TParam>(TParam param) where T : class, IInitializable<TParam>
+        public object ResolveType(Type type)
         {
-            T instance;
             try
             {
-                instance = ResolveFromContainer<T>();
+                return ResolveTypeFromContainer(type);
             }
             catch (Exception e)
             {
-                throw new IocContainerException($"Failed to resolve {typeof(T).Name} from the Ioc container", e);
-            }
-
-            try
-            {
-                instance.Initialize(param);
-                return instance;
-            }
-            catch (Exception e)
-            {
-                throw new IocContainerException($"Failed to initialize {typeof(T).Name} using parameter {param}", e);
-            }
-
-        }
-
-        public T ResolveAndInitializeById<T>(string param) where T : class, IInitializable<string>
-        {
-            T instance;
-            try
-            {
-                instance = ResolveFromContainer<T>();
-            }
-            catch (Exception e)
-            {
-                throw new IocContainerException($"Failed to resolve {typeof(T).Name} from the Ioc container", e);
-            }
-
-            try
-            {
-                instance.Initialize(param);
-                return instance;
-            }
-            catch (Exception e)
-            {
-                throw new IocContainerException($"Failed to initialize {typeof(T).Name} using parameter {param}", e);
+                throw new IocContainerException($"Failed to resolve {type.Name} from the Ioc container", e);
             }
         }
 
@@ -118,38 +82,6 @@ namespace Blauhaus.Ioc.Abstractions
 
         }
 
-        public bool TryResolveAndInitialize<T, TParam>(TParam param, out T instance) where T : class, IInitializable<TParam>
-        {
-            try
-            {
-                instance = ResolveFromContainer<T>();
-                instance.Initialize(param);
-                return true;
-            }
-            catch (Exception)
-            {
-                instance = default(T);
-                return false;
-            }
-
-        }
-
-        public bool TryResolveAndInitializeById<T>(string param, out T instance) where T : class, IInitializable<string>
-        {
-            try
-            {
-                instance = ResolveFromContainer<T>();
-                instance.Initialize(param);
-                return true;
-            }
-            catch (Exception)
-            {
-                instance = default(T);
-                return false;
-            }
-        }
-
-
         public void Dispose()
         {
             Dispose(true);
@@ -161,7 +93,9 @@ namespace Blauhaus.Ioc.Abstractions
         protected abstract void RegisterImplementationWithContainer<TInterface, TImplementation>(IocLifetime lifeTime) where TImplementation : class, TInterface where TInterface : class;
         protected abstract void RegisterInstanceWithContainer<T>(T instance) where T : class;
         
+        protected abstract object ResolveTypeFromContainer(Type type);
         protected abstract T ResolveFromContainer<T>() where T : class;
+
         protected abstract void Dispose(bool disposing);
     }
 }
