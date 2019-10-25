@@ -14,16 +14,6 @@ namespace Blauhaus.Ioc.IntegrationTests.TestObjects
         public ParameterObject ObjectParameter { get; private set; }
 
 
-        public void Initialize(string initializer)
-        {
-            StringParameter = initializer;
-        }
-
-
-        public void Initialize(ParameterObject initializer)
-        {
-            ObjectParameter = initializer;
-        }
 
     }
 }

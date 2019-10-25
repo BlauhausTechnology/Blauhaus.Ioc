@@ -2,10 +2,8 @@
 
 namespace Blauhaus.Ioc.IntegrationTests.TestObjects
 {
-    public interface IObjectA : IInitializable<string>, IInitializable<ParameterObject>
+    public interface IObjectA 
     {
         string Id { get; }       
-        string StringParameter { get; }
-        ParameterObject ObjectParameter { get; }
     }
 }
