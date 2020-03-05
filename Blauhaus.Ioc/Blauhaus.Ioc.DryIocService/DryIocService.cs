@@ -11,6 +11,7 @@ namespace Blauhaus.Ioc.DryIocService
 
         public DryIocService(IContainer dryIocContainer)
         {
+            dryIocContainer.With(rules => rules.WithTrackingDisposableTransients());
             _dryIocContainer = dryIocContainer; 
             _dryIocContainer.UseInstance<IIocService>(this);
         }
