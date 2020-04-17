@@ -7,13 +7,14 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
     public class DotNetCoreIocService : BaseIocService
     {
         private IServiceCollection _serviceCollection;
-        private IServiceProvider _serviceProvider;
+        private IServiceProvider _serviceProviderInstance;
+        private IServiceProvider ServiceProvider => _serviceProviderInstance ??= _serviceCollection.BuildServiceProvider();
 
         public DotNetCoreIocService(IServiceCollection serviceCollection)
         {
             _serviceCollection = serviceCollection;
             _serviceCollection.AddSingleton<IIocService>(this);
-            _serviceProvider = serviceCollection.BuildServiceProvider();
+            _serviceProviderInstance = serviceCollection.BuildServiceProvider();
         }
 
         protected override void RegisterTypeWithContainer<T>(IocLifetime lifeTime)
@@ -21,12 +22,12 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
             if (lifeTime == IocLifetime.Singleton)
             {
                 _serviceCollection.AddSingleton<T>();
-                _serviceProvider = _serviceCollection.BuildServiceProvider();
+                _serviceProviderInstance = _serviceCollection.BuildServiceProvider();
             }
             else
             {
                 _serviceCollection.AddTransient<T>();
-                _serviceProvider = _serviceCollection.BuildServiceProvider();
+                _serviceProviderInstance = _serviceCollection.BuildServiceProvider();
             }
         }
 
@@ -35,35 +36,35 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
             if (lifeTime == IocLifetime.Singleton)
             {
                 _serviceCollection.AddSingleton<TInterface, TImplementation>();
-                _serviceProvider = _serviceCollection.BuildServiceProvider();
+                _serviceProviderInstance = _serviceCollection.BuildServiceProvider();
             }
             else
             {
                 _serviceCollection.AddTransient<TInterface, TImplementation>();
-                _serviceProvider = _serviceCollection.BuildServiceProvider();
+                _serviceProviderInstance = _serviceCollection.BuildServiceProvider();
             }
         }
 
         protected override void RegisterInstanceWithContainer<T>(T instance)
         {
             _serviceCollection.AddSingleton<T>(instance);
-            _serviceProvider = _serviceCollection.BuildServiceProvider();
+            _serviceProviderInstance = _serviceCollection.BuildServiceProvider();
         }
 
         protected override T ResolveFromContainer<T>()
         {
-            return _serviceProvider.GetService<T>();
+            return _serviceProviderInstance.GetService<T>();
         }
         
         protected override object ResolveTypeFromContainer(Type type)
         {
-            return _serviceProvider.GetService(type);
+            return _serviceProviderInstance.GetService(type);
         }
 
 
         protected override void Dispose(bool disposing)
         {
-            _serviceProvider = null;
+            _serviceProviderInstance = null;
             _serviceCollection?.Clear();
             _serviceCollection = null;
         }
