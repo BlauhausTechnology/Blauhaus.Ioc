@@ -12,7 +12,7 @@ namespace Blauhaus.Ioc.DryIocService
             _container = container;
         }
 
-        public T Resolve<T>()
+        public T Resolve<T>() where T : class
         {
             return _container.Resolve<T>();
         }
