@@ -1,6 +1,6 @@
 ﻿using System;
 using Blauhaus.Ioc.Abstractions;
-using MvvmCross;
+using MvvmCross.Platform;
 
 namespace Blauhaus.Ioc.MvvmCrossIocService
 {
