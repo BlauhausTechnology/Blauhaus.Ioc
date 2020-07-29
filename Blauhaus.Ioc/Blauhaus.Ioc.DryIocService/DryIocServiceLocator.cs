@@ -1,4 +1,5 @@
-﻿using Blauhaus.Ioc.Abstractions;
+﻿using System;
+using Blauhaus.Ioc.Abstractions;
 using DryIoc;
 
 namespace Blauhaus.Ioc.DryIocService
@@ -12,9 +13,14 @@ namespace Blauhaus.Ioc.DryIocService
             _container = container;
         }
 
-        public T Resolve<T>()
+        public T Resolve<T>() where T : class
         {
             return _container.Resolve<T>();
+        }
+
+        public T ResolveAs<T>(Type type) where T : class
+        {
+            return (T) _container.Resolve(type);
         }
     }
 }

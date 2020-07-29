@@ -13,9 +13,14 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
             _serviceProvider = serviceProvider;
         }
 
-        public T Resolve<T>()
+        public T Resolve<T>() where T : class
         {
             return _serviceProvider.GetRequiredService<T>();
+        }
+
+        public T ResolveAs<T>(Type type) where T : class
+        {
+            return (T) _serviceProvider.GetRequiredService(type);
         }
     }
 }
