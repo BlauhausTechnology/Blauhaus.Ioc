@@ -25,3 +25,4 @@ jobs:
         dotnet nuget push /home/runner/work/Blauhaus.Ioc/Blauhaus.Ioc/Blauhaus.Ioc.DryIocService.${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
         dotnet nuget push /home/runner/work/Blauhaus.Ioc/Blauhaus.Ioc/Blauhaus.Ioc.MvvmCrossIocService.${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
         dotnet nuget push /home/runner/work/Blauhaus.Ioc/Blauhaus.Ioc/Blauhaus.Ioc.ServiceProviderIocService.${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push /home/runner/work/Blauhaus.Ioc/Blauhaus.Ioc/Blauhaus.Ioc.TestHelpers.${VERSION_NAME}.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json

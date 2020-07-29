@@ -19,7 +19,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0DC8F3BF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.DotNetCoreIocService", "Blauhaus.Ioc.DotNetCoreIocService\Blauhaus.Ioc.DotNetCoreIocService.csproj", "{D3E4E90C-0CA5-436D-9461-53C68207320A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blauhaus.Ioc.ServiceProviderIocService", "Blauhaus.Ioc.ServiceProviderIocService\Blauhaus.Ioc.ServiceProviderIocService.csproj", "{20715661-A238-4028-BD1D-5C294BE57CB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.ServiceProviderIocService", "Blauhaus.Ioc.ServiceProviderIocService\Blauhaus.Ioc.ServiceProviderIocService.csproj", "{20715661-A238-4028-BD1D-5C294BE57CB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E326020E-871D-4FED-8A18-D6AAD9496B45}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blauhaus.Ioc.TestHelpers", "Blauhaus.Ioc.TestHelpers\Blauhaus.Ioc.TestHelpers.csproj", "{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +58,10 @@ Global
 		{20715661-A238-4028-BD1D-5C294BE57CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20715661-A238-4028-BD1D-5C294BE57CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20715661-A238-4028-BD1D-5C294BE57CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +73,7 @@ Global
 		{705FBA32-3D96-44D3-8E7D-45BCEF21BEC5} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 		{D3E4E90C-0CA5-436D-9461-53C68207320A} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 		{20715661-A238-4028-BD1D-5C294BE57CB5} = {A76A7371-A39B-416F-91F8-3BC98434C481}
+		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F} = {0DC8F3BF-8EA2-4D82-B594-4FDD1B119B45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F7EDC83-CEC9-400E-87E0-03E3E3B26443}
