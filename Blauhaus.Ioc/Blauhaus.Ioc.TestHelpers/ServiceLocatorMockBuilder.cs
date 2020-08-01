@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Blauhaus.Ioc.Abstractions;
 using Blauhaus.TestHelpers.MockBuilders;
 using Moq;
@@ -11,6 +12,12 @@ namespace Blauhaus.Ioc.TestHelpers
         {
             Mock.Setup(x => x.Resolve<T>())
                 .Returns(value);
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_Resolve_returns_sequence<T>(IEnumerable<T> values) where T : class
+        {
+            var queue = new Queue<T>(values);
+            Mock.Setup(x => x.Resolve<T>()).Returns(queue.Dequeue);
             return this;
         }
         public ServiceLocatorMockBuilder Where_Resolve_throws<T>(string exceptionMessage) where T : class
@@ -31,6 +38,12 @@ namespace Blauhaus.Ioc.TestHelpers
         {
             Mock.Setup(x => x.ResolveAs<T>(type))
                 .Returns(value);
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_ResolveAs_returns_sequence<T>(IEnumerable<T> values) where T : class
+        {
+            var queue = new Queue<T>(values);
+            Mock.Setup(x => x.ResolveAs<T>(It.IsAny<Type>())).Returns(queue.Dequeue);
             return this;
         }
         public ServiceLocatorMockBuilder Where_ResolveAs_throws<T>(string exceptionMessage) where T : class
