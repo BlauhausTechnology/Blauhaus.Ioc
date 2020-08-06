@@ -1,6 +1,6 @@
 ﻿using System;
 using Blauhaus.Ioc.Abstractions;
-using MvvmCross.Platform;
+using MvvmCross; 
 
 namespace Blauhaus.Ioc.MvvmCrossIocService
 {
@@ -8,12 +8,12 @@ namespace Blauhaus.Ioc.MvvmCrossIocService
     {
         public T Resolve<T>() where T : class
         {
-            return Mvx.Resolve<T>();
+            return Mvx.IoCProvider.Resolve<T>();
         }
 
         public T ResolveAs<T>(Type type) where T : class
         {
-            return (T) Mvx.Resolve(type);
+            return (T) Mvx.IoCProvider.Resolve(type);
         }
     }
 }
