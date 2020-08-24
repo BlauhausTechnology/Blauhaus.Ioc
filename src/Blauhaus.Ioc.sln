@@ -26,7 +26,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blauhaus.Ioc.TestHelpers", "Blauhaus.Ioc.TestHelpers\Blauhaus.Ioc.TestHelpers.csproj", "{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.TestHelpers", "Blauhaus.Ioc.TestHelpers\Blauhaus.Ioc.TestHelpers.csproj", "{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blauhaus.Ioc.AutofacIocService", "Blauhaus.Ioc.AutofacIocService\Blauhaus.Ioc.AutofacIocService.csproj", "{D515565D-D697-44D2-A10B-61F99DB976B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D515565D-D697-44D2-A10B-61F99DB976B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D515565D-D697-44D2-A10B-61F99DB976B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D515565D-D697-44D2-A10B-61F99DB976B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D515565D-D697-44D2-A10B-61F99DB976B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{D3E4E90C-0CA5-436D-9461-53C68207320A} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 		{20715661-A238-4028-BD1D-5C294BE57CB5} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F} = {0DC8F3BF-8EA2-4D82-B594-4FDD1B119B45}
+		{D515565D-D697-44D2-A10B-61F99DB976B4} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F7EDC83-CEC9-400E-87E0-03E3E3B26443}
