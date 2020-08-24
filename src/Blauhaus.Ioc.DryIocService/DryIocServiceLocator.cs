@@ -22,5 +22,10 @@ namespace Blauhaus.Ioc.DryIocService
         {
             return (T) _container.Resolve(type);
         }
+
+        public void ResetScope()
+        {
+            throw new NotImplementedException("Have not had a need for this yet");
+        }
     }
 }
