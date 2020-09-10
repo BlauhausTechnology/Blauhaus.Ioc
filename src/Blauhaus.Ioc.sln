@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.AutofacIocService", "Blauhaus.Ioc.AutofacIocService\Blauhaus.Ioc.AutofacIocService.csproj", "{D515565D-D697-44D2-A10B-61F99DB976B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestHelpers", "TestHelpers", "{89D4DD2F-AC5E-4E52-83C3-5A6BC8F3A904}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.TestHelpers", "Blauhaus.Ioc.TestHelpers\Blauhaus.Ioc.TestHelpers.csproj", "{7BCB8FFC-7EFB-4D50-82B0-B44B0D64B04E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,10 @@ Global
 		{D515565D-D697-44D2-A10B-61F99DB976B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D515565D-D697-44D2-A10B-61F99DB976B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D515565D-D697-44D2-A10B-61F99DB976B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCB8FFC-7EFB-4D50-82B0-B44B0D64B04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCB8FFC-7EFB-4D50-82B0-B44B0D64B04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCB8FFC-7EFB-4D50-82B0-B44B0D64B04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCB8FFC-7EFB-4D50-82B0-B44B0D64B04E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +66,7 @@ Global
 		{705FBA32-3D96-44D3-8E7D-45BCEF21BEC5} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 		{D3E4E90C-0CA5-436D-9461-53C68207320A} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 		{D515565D-D697-44D2-A10B-61F99DB976B4} = {A76A7371-A39B-416F-91F8-3BC98434C481}
+		{7BCB8FFC-7EFB-4D50-82B0-B44B0D64B04E} = {89D4DD2F-AC5E-4E52-83C3-5A6BC8F3A904}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F7EDC83-CEC9-400E-87E0-03E3E3B26443}
