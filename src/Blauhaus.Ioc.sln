@@ -7,28 +7,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.Abstractions",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.DryIocService", "Blauhaus.Ioc.DryIocService\Blauhaus.Ioc.DryIocService.csproj", "{064B908B-7027-463C-B45B-B09E050E33F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.IntegrationTests", "Blauhaus.Ioc.Tests\Blauhaus.Ioc.IntegrationTests.csproj", "{3D6063E0-225A-4605-B9DE-548EE5889C2C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.MvvmCrossIocService", "Blauhaus.Ioc.MvvmCrossIocService\Blauhaus.Ioc.MvvmCrossIocService.csproj", "{705FBA32-3D96-44D3-8E7D-45BCEF21BEC5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{677F983A-16F4-4647-8233-1F480860C5E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{A76A7371-A39B-416F-91F8-3BC98434C481}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0DC8F3BF-8EA2-4D82-B594-4FDD1B119B45}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.DotNetCoreIocService", "Blauhaus.Ioc.DotNetCoreIocService\Blauhaus.Ioc.DotNetCoreIocService.csproj", "{D3E4E90C-0CA5-436D-9461-53C68207320A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.ServiceProviderIocService", "Blauhaus.Ioc.ServiceProviderIocService\Blauhaus.Ioc.ServiceProviderIocService.csproj", "{20715661-A238-4028-BD1D-5C294BE57CB5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E326020E-871D-4FED-8A18-D6AAD9496B45}"
 	ProjectSection(SolutionItems) = preProject
 		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.TestHelpers", "Blauhaus.Ioc.TestHelpers\Blauhaus.Ioc.TestHelpers.csproj", "{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blauhaus.Ioc.AutofacIocService", "Blauhaus.Ioc.AutofacIocService\Blauhaus.Ioc.AutofacIocService.csproj", "{D515565D-D697-44D2-A10B-61F99DB976B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blauhaus.Ioc.AutofacIocService", "Blauhaus.Ioc.AutofacIocService\Blauhaus.Ioc.AutofacIocService.csproj", "{D515565D-D697-44D2-A10B-61F99DB976B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,10 +36,6 @@ Global
 		{064B908B-7027-463C-B45B-B09E050E33F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{064B908B-7027-463C-B45B-B09E050E33F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{064B908B-7027-463C-B45B-B09E050E33F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D6063E0-225A-4605-B9DE-548EE5889C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D6063E0-225A-4605-B9DE-548EE5889C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D6063E0-225A-4605-B9DE-548EE5889C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D6063E0-225A-4605-B9DE-548EE5889C2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{705FBA32-3D96-44D3-8E7D-45BCEF21BEC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{705FBA32-3D96-44D3-8E7D-45BCEF21BEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{705FBA32-3D96-44D3-8E7D-45BCEF21BEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,14 +44,6 @@ Global
 		{D3E4E90C-0CA5-436D-9461-53C68207320A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3E4E90C-0CA5-436D-9461-53C68207320A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3E4E90C-0CA5-436D-9461-53C68207320A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20715661-A238-4028-BD1D-5C294BE57CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20715661-A238-4028-BD1D-5C294BE57CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20715661-A238-4028-BD1D-5C294BE57CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20715661-A238-4028-BD1D-5C294BE57CB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D515565D-D697-44D2-A10B-61F99DB976B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D515565D-D697-44D2-A10B-61F99DB976B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D515565D-D697-44D2-A10B-61F99DB976B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,11 +55,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{41070124-1048-4B9F-AC76-CA6CFB147C82} = {677F983A-16F4-4647-8233-1F480860C5E7}
 		{064B908B-7027-463C-B45B-B09E050E33F1} = {A76A7371-A39B-416F-91F8-3BC98434C481}
-		{3D6063E0-225A-4605-B9DE-548EE5889C2C} = {0DC8F3BF-8EA2-4D82-B594-4FDD1B119B45}
 		{705FBA32-3D96-44D3-8E7D-45BCEF21BEC5} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 		{D3E4E90C-0CA5-436D-9461-53C68207320A} = {A76A7371-A39B-416F-91F8-3BC98434C481}
-		{20715661-A238-4028-BD1D-5C294BE57CB5} = {A76A7371-A39B-416F-91F8-3BC98434C481}
-		{AD1FC053-DEA5-47EC-9D97-684EE74ED37F} = {0DC8F3BF-8EA2-4D82-B594-4FDD1B119B45}
 		{D515565D-D697-44D2-A10B-61F99DB976B4} = {A76A7371-A39B-416F-91F8-3BC98434C481}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
