@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Blauhaus.Ioc.Abstractions
 {
@@ -7,6 +8,7 @@ namespace Blauhaus.Ioc.Abstractions
         T Resolve<T>() where T : class;
         T ResolveAs<T>(Type type) where T : class;
 
-        IDisposable ResetScope();
+        IDisposable ResetScope(); 
+
     }
 }

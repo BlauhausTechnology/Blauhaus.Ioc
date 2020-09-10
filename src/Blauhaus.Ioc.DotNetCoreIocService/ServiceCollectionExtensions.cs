@@ -7,7 +7,7 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
     {
         public static IServiceCollection AddServiceLocator(this IServiceCollection services)
         {
-            services.AddTransient<IServiceLocator, DotNetCoreServiceLocator>();
+            services.AddScoped<IServiceLocator, DotNetCoreServiceLocator>();
             return services;
         }
     }
