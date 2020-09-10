@@ -7,6 +7,6 @@ namespace Blauhaus.Ioc.Abstractions
         T Resolve<T>() where T : class;
         T ResolveAs<T>(Type type) where T : class;
 
-        void ResetScope();
+        IDisposable ResetScope();
     }
 }

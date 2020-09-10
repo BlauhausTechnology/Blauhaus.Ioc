@@ -52,5 +52,12 @@ namespace Blauhaus.Ioc.TestHelpers
                 .Throws(new Exception(exceptionMessage));
             return this;
         }
+
+        
+        public ServiceLocatorMockBuilder Where_ResolveAs_returns(IDisposable scope)
+        {
+            Mock.Setup(x => x.ResetScope()).Returns(scope);
+            return this;
+        }
     }
 }

@@ -25,10 +25,11 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
             return (T)_scope!.ServiceProvider.GetRequiredService(type);
         }
 
-        public void ResetScope()
+        public IDisposable ResetScope()
         {
             _scope?.Dispose();
             _scope = _serviceProvider.CreateScope();
+            return _scope;
         }
     }
 }

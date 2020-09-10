@@ -25,10 +25,11 @@ namespace Blauhaus.Ioc.AutofacIocService
             return (T)_scope.Resolve(type);
         }
 
-        public void ResetScope()
+        public IDisposable ResetScope()
         {
             _scope?.Dispose();
             _scope = _container.BeginLifetimeScope();
+            return _scope;
         }
 
     }
