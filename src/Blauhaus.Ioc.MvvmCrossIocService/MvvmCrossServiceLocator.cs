@@ -11,6 +11,11 @@ namespace Blauhaus.Ioc.MvvmCrossIocService
             return Mvx.IoCProvider.Resolve<T>();
         }
 
+        public object Resolve(Type type)
+        {
+            return Mvx.IoCProvider.Resolve(type);
+        }
+
         public T ResolveAs<T>(Type type) where T : class
         {
             return (T) Mvx.IoCProvider.Resolve(type);

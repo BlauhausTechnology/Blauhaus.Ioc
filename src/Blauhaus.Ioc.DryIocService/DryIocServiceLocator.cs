@@ -18,6 +18,11 @@ namespace Blauhaus.Ioc.DryIocService
             return _container.Resolve<T>();
         }
 
+        public object Resolve(Type type)
+        {
+            return _container.Resolve(type);
+        }
+
         public T ResolveAs<T>(Type type) where T : class
         {
             return (T) _container.Resolve(type);

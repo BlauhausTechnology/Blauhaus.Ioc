@@ -26,6 +26,31 @@ namespace Blauhaus.Ioc.TestHelpers
                 .Throws(new Exception(exceptionMessage));
             return this;
         }
+        
+        public ServiceLocatorMockBuilder Where_Resolve_returns(object value, Type? type = null)
+        {
+            if (type == null)
+            {
+                Mock.Setup(x => x.Resolve(It.IsAny<Type>())).Returns(value);
+            }
+            else
+            {
+                Mock.Setup(x => x.Resolve(type)).Returns(value);
+            }
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_Resolve_returns_sequence(IEnumerable<object> values)  
+        {
+            var queue = new Queue<object>(values);
+            Mock.Setup(x => x.Resolve(It.IsAny<Type>())).Returns(queue.Dequeue);
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_Resolve_throws(string exceptionMessage) 
+        {
+            Mock.Setup(x => x.Resolve(It.IsAny<Type>()))
+                .Throws(new Exception(exceptionMessage));
+            return this;
+        }
 
 
         public ServiceLocatorMockBuilder Where_ResolveAs_returns<T>(T value) where T : class

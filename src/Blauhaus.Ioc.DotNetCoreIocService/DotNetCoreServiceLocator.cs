@@ -22,6 +22,13 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
 
         }
 
+        public object Resolve(Type type)
+        {
+            return _scope == null 
+                ? _serviceProvider.GetRequiredService(type) 
+                : _scope.ServiceProvider.GetRequiredService(type);
+        }
+
         public T ResolveAs<T>(Type type) where T : class
         {
             return (T) (_scope == null 

@@ -20,6 +20,11 @@ namespace Blauhaus.Ioc.AutofacIocService
             return _scope.Resolve<T>();
         }
 
+        public object Resolve(Type type)
+        {
+            return _scope.Resolve(type);
+        }
+
         public T ResolveAs<T>(Type type) where T : class
         {
             return (T)_scope.Resolve(type);
