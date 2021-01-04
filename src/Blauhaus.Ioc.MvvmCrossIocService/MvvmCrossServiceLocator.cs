@@ -15,5 +15,9 @@ namespace Blauhaus.Ioc.MvvmCrossIocService
         {
             return (T) Mvx.IoCProvider.Resolve(type);
         }
+        public IDisposable ResetScope()
+        {
+            throw new NotImplementedException("Have not had a need for this yet");
+        }
     }
 }
