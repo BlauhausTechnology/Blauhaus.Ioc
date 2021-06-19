@@ -6,13 +6,11 @@ namespace Blauhaus.Ioc.AutofacIocService
 {
     public class AutofacServiceLocator : IServiceLocator
     {
-        private IContainer _container;
         private ILifetimeScope _scope;
 
-        public void Initialize(IContainer container)
+        public void Initialize(ILifetimeScope scope)
         {
-            _container = container;
-            ResetScope();
+            _scope = scope;
         }
 
         public T Resolve<T>() where T : class
@@ -32,9 +30,7 @@ namespace Blauhaus.Ioc.AutofacIocService
 
         public IDisposable ResetScope()
         {
-            _scope?.Dispose();
-            _scope = _container.BeginLifetimeScope();
-            return _scope;
+            throw new NotImplementedException();
         }
 
     }
