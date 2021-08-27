@@ -6,4 +6,8 @@
     <Product>Blauhaus.Ioc</Product>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Blauhaus.Common.Abstractions" Version="1.11.3" />
+  </ItemGroup>
+
 </Project>

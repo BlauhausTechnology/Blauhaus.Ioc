@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Blauhaus.Common.Abstractions;
 using Blauhaus.Ioc.Abstractions;
 using Blauhaus.TestHelpers.MockBuilders;
 using Moq;
@@ -8,6 +9,44 @@ namespace Blauhaus.Ioc.TestHelpers
 {
     public class ServiceLocatorMockBuilder : BaseMockBuilder<ServiceLocatorMockBuilder, IServiceLocator>
     {
+        public ServiceLocatorMockBuilder Where_ResolveAndInitializeAsync_returns<T>(T value) where T : class, IAsyncInitializable<Guid>
+        {
+            Mock.Setup(x => x.ResolveAndInitializeAsync<T, Guid>(It.IsAny<Guid>()))
+                .ReturnsAsync(value);
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_ResolveAndInitializeAsync_returns<T>(T value, Guid id) where T : class, IAsyncInitializable<Guid>
+        {
+            Mock.Setup(x => x.ResolveAndInitializeAsync<T, Guid>(id))
+                .ReturnsAsync(value);
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_ResolveAndInitializeAsync_returns_sequence<T>(IEnumerable<T> values) where T : class, IAsyncInitializable<Guid>
+        {
+            var queue = new Queue<T>(values);
+            Mock.Setup(x => x.ResolveAndInitializeAsync<T, Guid>(It.IsAny<Guid>())).ReturnsAsync(queue.Dequeue);
+            return this;
+        } 
+        public ServiceLocatorMockBuilder Where_ResolveAndInitializeAsync_returns<T, TId>(T value) where T : class, IAsyncInitializable<TId>
+        {
+            Mock.Setup(x => x.ResolveAndInitializeAsync<T, TId>(It.IsAny<TId>()))
+                .ReturnsAsync(value);
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_ResolveAndInitializeAsync_returns<T, TId>(T value, TId id) where T : class, IAsyncInitializable<TId>
+        {
+            Mock.Setup(x => x.ResolveAndInitializeAsync<T, TId>(id))
+                .ReturnsAsync(value);
+            return this;
+        }
+        public ServiceLocatorMockBuilder Where_ResolveAndInitializeAsync_returns_sequence<T, TId>(IEnumerable<T> values) where T : class, IAsyncInitializable<TId>
+        {
+            var queue = new Queue<T>(values);
+            Mock.Setup(x => x.ResolveAndInitializeAsync<T, TId>(It.IsAny<TId>())).ReturnsAsync(queue.Dequeue);
+            return this;
+        } 
+
+
         public ServiceLocatorMockBuilder Where_Resolve_returns<T>(T value) where T : class
         {
             Mock.Setup(x => x.Resolve<T>())

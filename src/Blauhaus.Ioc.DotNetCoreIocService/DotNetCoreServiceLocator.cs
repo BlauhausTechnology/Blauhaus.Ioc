@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Blauhaus.Common.Abstractions;
 using Blauhaus.Ioc.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -34,6 +36,13 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
             return (T) (_scope == null 
                 ? _serviceProvider.GetRequiredService(type) 
                 : _scope.ServiceProvider.GetRequiredService(type));
+        }
+
+        public async Task<T> ResolveAndInitializeAsync<T, TId>(TId id) where T : class, IAsyncInitializable<TId>
+        {
+            var t = Resolve<T>();
+            await t.InitializeAsync(id);
+            return t;
         }
 
         public IDisposable ResetScope()

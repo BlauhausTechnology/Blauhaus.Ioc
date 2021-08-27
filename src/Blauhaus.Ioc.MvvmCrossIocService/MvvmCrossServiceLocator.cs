@@ -1,4 +1,6 @@
 ﻿using System;
+using Blauhaus.Common.Abstractions;
+using System.Threading.Tasks;
 using Blauhaus.Ioc.Abstractions;
 using MvvmCross; 
 
@@ -20,6 +22,13 @@ namespace Blauhaus.Ioc.MvvmCrossIocService
         {
             return (T) Mvx.IoCProvider.Resolve(type);
         }
+        public async Task<T> ResolveAndInitializeAsync<T, TId>(TId id) where T : class, IAsyncInitializable<TId>
+        {
+            var t = Resolve<T>();
+            await t.InitializeAsync(id);
+            return t;
+        }
+
         public IDisposable ResetScope()
         {
             throw new NotImplementedException("Have not had a need for this yet");

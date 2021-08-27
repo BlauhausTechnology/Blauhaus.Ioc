@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Blauhaus.Common.Abstractions;
 using Blauhaus.Ioc.Abstractions;
 using DryIoc;
 
@@ -28,6 +30,13 @@ namespace Blauhaus.Ioc.DryIocService
             return (T) _container.Resolve(type);
         }
 
+        public async Task<T> ResolveAndInitializeAsync<T, TId>(TId id) where T : class, IAsyncInitializable<TId>
+        {
+            var t = Resolve<T>();
+            await t.InitializeAsync(id);
+            return t;
+        }
+        
         public IDisposable ResetScope()
         {
             throw new NotImplementedException("Have not had a need for this yet");
