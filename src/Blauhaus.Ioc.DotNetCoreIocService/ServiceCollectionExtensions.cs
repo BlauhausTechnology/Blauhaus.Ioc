@@ -7,7 +7,8 @@ namespace Blauhaus.Ioc.DotNetCoreIocService
     {
         public static IServiceCollection AddServiceLocator(this IServiceCollection services)
         {
-            services.AddSingleton<IServiceLocator, DotNetCoreServiceLocator>();
+            //allows the construction of service locator to be deferred until there is a valid (non-root) serviceProvider available
+            services.AddScoped<IServiceLocator>(sp => new DotNetCoreServiceLocator(sp));
             return services;
         }
     }
