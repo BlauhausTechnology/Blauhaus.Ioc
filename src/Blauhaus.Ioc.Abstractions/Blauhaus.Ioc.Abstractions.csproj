@@ -3,11 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Blauhaus</Authors>
+      <LangVersion>latest</LangVersion>
     <Product>Blauhaus.Ioc</Product>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blauhaus.Common.Abstractions" Version="2.2.12" />
+    <PackageReference Include="Blauhaus.Common.Abstractions" Version="2.3.18" />
   </ItemGroup>
 
 </Project>
